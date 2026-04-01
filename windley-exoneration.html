@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenneth Windley — Exoneration | Shanies Law Office</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1410;
+      --ink-mid: #3d3028;
+      --ink-light: #6b5e52;
+      --paper: #f5f0e8;
+      --paper-warm: #ede6d6;
+      --paper-dark: #d9cdb8;
+      --accent: #8b1a1a;
+      --accent-light: #b8382b;
+      --gold: #c8a96e;
+      --gold-dark: #9a7a45;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--ink);
+      border-bottom: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--paper);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--paper-dark);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      padding-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      background: var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 5rem 6rem 6rem;
+      position: relative;
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: 0; bottom: 0;
+      width: 4px;
+      background: var(--gold);
+    }
+
+    .eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--paper);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-sub {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--gold);
+      margin-bottom: 3rem;
+      line-height: 1.4;
+    }
+
+    .hero-stat-row {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 1rem;
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      line-height: 1;
+    }
+
+    .hero-stat .label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--paper-dark);
+      margin-top: 0.3rem;
+    }
+
+    .hero-right {
+      background: var(--paper-warm);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 5rem 6rem 5rem;
+      position: relative;
+    }
+
+    /* Texture overlay */
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(ellipse at 80% 20%, rgba(200,169,110,0.08) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .pull-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.45;
+      border-left: 4px solid var(--accent);
+      padding-left: 2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .pull-quote cite {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: normal;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-top: 1rem;
+    }
+
+    .hero-date-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0.7rem 1.4rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-date-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* ── SCROLL INDICATOR ── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.5;
+      animation: fade-bob 2s ease-in-out infinite;
+    }
+
+    .scroll-hint span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    @keyframes fade-bob {
+      0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+      50% { opacity: 0.7; transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── SECTION SHELL ── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 6rem 3rem;
+    }
+
+    .section-full {
+      padding: 6rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--paper-dark);
+    }
+
+    .section-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--paper-dark);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* ── TIMELINE ── */
+    .timeline-section {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .timeline-section .section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    .timeline-section .section-num { color: rgba(255,255,255,0.1); }
+    .timeline-section .section-title { color: var(--paper); }
+    .timeline-section .section-header { border-color: rgba(255,255,255,0.1); }
+
+    .timeline {
+      position: relative;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 110px;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), rgba(200,169,110,0.1));
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0;
+      margin-bottom: 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-year {
+      padding: 2rem 2rem 2rem 0;
+      text-align: right;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      line-height: 1.3;
+    }
+
+    .timeline-body {
+      padding: 1.8rem 0 1.8rem 2.5rem;
+      border-left: none;
+      position: relative;
+    }
+
+    .timeline-body::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 2.5rem;
+      width: 9px;
+      height: 9px;
+      background: var(--gold);
+      border-radius: 50%;
+      border: 2px solid var(--ink);
+    }
+
+    .timeline-event {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-text {
+      font-size: 0.95rem;
+      color: rgba(245,240,232,0.85);
+      line-height: 1.6;
+    }
+
+    /* ── WHAT WENT WRONG ── */
+    .failures-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--paper-dark);
+      margin-top: 2rem;
+    }
+
+    .failure-card {
+      background: var(--paper-warm);
+      padding: 2.5rem;
+    }
+
+    .failure-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .failure-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .failure-text {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--ink-mid);
+    }
+
+    /* ── CRU INVESTIGATION ── */
+    .cru-section {
+      background: var(--paper-warm);
+    }
+
+    .cru-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .prose p { margin-bottom: 1.4rem; }
+    .prose p:last-child { margin-bottom: 0; }
+
+    .evidence-box {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 2.5rem;
+    }
+
+    .evidence-box .box-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .evidence-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .evidence-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .evidence-marker {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .evidence-item p {
+      font-size: 0.9rem;
+      color: rgba(245,240,232,0.85);
+      line-height: 1.6;
+    }
+
+    /* ── THE FIRM'S WORK ── */
+    .firm-section {
+      background: var(--paper);
+    }
+
+    .firm-two-col {
+      display: grid;
+      grid-template-columns: 5fr 4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .firm-bio-card {
+      background: var(--paper-warm);
+      border-top: 4px solid var(--gold);
+      padding: 2.5rem;
+    }
+
+    .firm-bio-card .attorney-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+
+    .firm-bio-card .attorney-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .firm-bio-card .bio-text {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--ink-mid);
+    }
+
+    .award-list {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--paper-dark);
+    }
+
+    .award-list .award-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--ink-light);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--paper-dark);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .award-item::before {
+      content: '—';
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── BLOCKQUOTE ── */
+    .standalone-quote {
+      background: var(--accent);
+      padding: 5rem 6rem;
+      text-align: center;
+    }
+
+    .standalone-quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--paper);
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .standalone-quote cite {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.65);
+    }
+
+    /* ── PRESS ── */
+    .press-section {
+      background: var(--paper-dark);
+    }
+
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5px;
+      background: var(--paper);
+      margin-top: 2rem;
+    }
+
+    .press-card {
+      background: var(--paper-dark);
+      padding: 2rem 1.75rem;
+    }
+
+    .press-outlet {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 0.7rem;
+    }
+
+    .press-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: var(--paper-dark);
+      padding: 4rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .footer-firm {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--paper);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-tagline {
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-contact p {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: rgba(245,240,232,0.6);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-end;
+    }
+
+    .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--paper-dark);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-divider {
+      grid-column: 1 / -1;
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-bottom {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: rgba(245,240,232,0.3);
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 5rem 2.5rem 3rem; }
+      .hero-right { padding: 3rem 2.5rem 5rem; }
+      .hero-left::after { display: none; }
+      .failures-grid { grid-template-columns: 1fr; }
+      .cru-grid { grid-template-columns: 1fr; }
+      .firm-two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+      .press-grid { grid-template-columns: repeat(2, 1fr); }
+      .section { padding: 4rem 1.75rem; }
+      .standalone-quote { padding: 3.5rem 2rem; }
+      .timeline::before { left: 80px; }
+      .timeline-item { grid-template-columns: 80px 1fr; }
+      nav { padding: 0 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      .press-grid { grid-template-columns: 1fr; }
+      footer { grid-template-columns: 1fr; }
+      .footer-links { align-items: flex-start; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://shanieslaw.com" class="nav-logo">Shanies <span>Law</span> Office</a>
+    <ul class="nav-links">
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#failures">What Went Wrong</a></li>
+      <li><a href="#cru">The Investigation</a></li>
+      <li><a href="#firm">Our Work</a></li>
+      <li><a href="https://shanieslaw.com/wrongful-convictions">Practice</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="eyebrow">Exoneration &nbsp;·&nbsp; March 17, 2026 &nbsp;·&nbsp; Brooklyn, New York</p>
+      <h1 class="hero-name">Kenneth<br>Windley</h1>
+      <p class="hero-sub">Wrongfully imprisoned 19 years<br>for a robbery he did not commit.</p>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <span class="num">19</span>
+          <span class="label">Years Lost</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">$542</span>
+          <span class="label">Money Order</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">2</span>
+          <span class="label">Real Perpetrators</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="pull-quote">
+        "It cost me 20 years, but they said they corrected it now. So that's all that matters. So I'm good with that."
+        <cite>— Kenneth Windley, outside Brooklyn Supreme Court, March 17, 2026</cite>
+      </div>
+      <div class="hero-date-badge">
+        <span class="dot"></span>
+        Exonerated by Brooklyn Supreme Court &nbsp;·&nbsp; Justice Matthew D'Emic
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section section-full" id="timeline">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">A Timeline of Injustice</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-year">April 1<br>2005</div>
+          <div class="timeline-body">
+            <div class="timeline-event">The Robbery</div>
+            <p class="timeline-text">Two men follow 70-year-old Gerald Ross into his Crown Heights apartment building, robbing him in the elevator of $485 cash and two unsigned money orders. The same morning, Kenneth Windley — who was buying a stove for his mother — purchased one of those money orders from two neighborhood acquaintances at a discount, presenting his real name and driver's license at the appliance store. He had no idea it was stolen.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">May–June<br>2005</div>
+          <div class="timeline-body">
+            <div class="timeline-event">Investigation & Misidentification</div>
+            <p class="timeline-text">Police trace the money order to Windley through the appliance store receipt. Ross is shown a photo array six weeks after the robbery and identifies Windley. Three weeks later, he identifies Windley again in a live lineup. Windley is arrested. From the very beginning, he tells investigators the truth: two men sold him the money order. He even provides their nicknames and partial names — information investigators do not pursue.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">March<br>2007</div>
+          <div class="timeline-body">
+            <div class="timeline-event">Wrongful Conviction</div>
+            <p class="timeline-text">After a trial at which Windley testifies consistently with what he told police, a Brooklyn jury convicts him of second-degree robbery. Because of prior felony convictions, he is sentenced to 20 years to life. His appeals fail. The Appellate Division, Second Department affirms the conviction in 2010; the Court of Appeals denies leave. A federal habeas petition is also denied.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2010–<br>2020</div>
+          <div class="timeline-body">
+            <div class="timeline-event">Years Behind Bars — and a Man Who Never Stopped Fighting</div>
+            <p class="timeline-text">From prison, Windley continues identifying the two men who robbed Gerald Ross. His fiancée Donna Carter and a private investigator locate Suspect 1 after his parole in 2018. A second investigator tracks down Suspect 2. Both men, by now serving time for a pattern of robberies targeting elderly men in Brooklyn with the same modus operandi as the Ross robbery, agree to come forward. They confirm, in sworn statements and recorded interviews, that Windley had no involvement in the crime.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2023–<br>2025</div>
+          <div class="timeline-body">
+            <div class="timeline-event">Shanies Law Engages — CRU Review</div>
+            <p class="timeline-text">Shanies Law takes on Windley's representation and submits the case to the Kings County District Attorney's Conviction Review Unit, presenting the sworn confessions and corroborating evidence. The CRU launches a thorough reinvestigation, interviewing the actual perpetrators, reviewing prison phone records and emails, and reexamining every piece of trial evidence. The CRU confirms the suspects' identities and finds their accounts plausible and compelling.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">March 16–17<br>2026</div>
+          <div class="timeline-body">
+            <div class="timeline-event">Exoneration</div>
+            <p class="timeline-text">Brooklyn DA Eric Gonzalez moves to vacate the conviction. Brooklyn Supreme Court Justice Matthew D'Emic grants the joint application of prosecutors and defense counsel, dismisses the indictment entirely, and Kenneth Windley walks out of the courthouse a free man — accompanied by his mother, Francina Windley Patterson, and his fiancée Donna Carter. DA Gonzalez shakes his hand outside and privately apologizes: "Had we known what the evidence was, this case should have never happened."</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WENT WRONG -->
+  <section id="failures">
+    <div class="section">
+      <div class="section-header fade-in">
+        <span class="section-num">02</span>
+        <h2 class="section-title">What Went Wrong</h2>
+      </div>
+      <p class="prose fade-in" style="max-width:720px; margin-bottom: 2.5rem; color: var(--ink-mid);">
+        The Windley case is a convergence of well-documented failure modes in the criminal justice system — each individually dangerous, together catastrophic. The Kings County DA's own CRU report acknowledged this was "a cautionary tale of how things can seem one way but, without careful analysis, not be what it purports to be."
+      </p>
+      <div class="failures-grid">
+        <div class="failure-card fade-in">
+          <div class="failure-icon">👁</div>
+          <h3 class="failure-title">Eyewitness Misidentification</h3>
+          <p class="failure-text">Gerald Ross identified Windley from a photo array six weeks after the robbery, and then again in a live lineup three weeks later. Ross acknowledged the man who went through his pockets had been actively hiding his face during the robbery. The description he gave — height, build, complexion — did not clearly match Windley and was inconsistent across accounts. Delayed eyewitness identification under these conditions is a well-established driver of wrongful convictions.</p>
+        </div>
+        <div class="failure-card fade-in">
+          <div class="failure-icon">🔍</div>
+          <h3 class="failure-title">Investigative Tunnel Vision</h3>
+          <p class="failure-text">From the moment police traced the money order to Windley, the investigation treated him as the answer rather than a lead. Windley told police before his arrest — and testified at trial — that he bought the money order from two men, providing their nicknames and partial names. Investigators did not meaningfully pursue those leads. The two actual perpetrators were still committing the same type of robbery in the same Brooklyn neighborhood for months after the crime.</p>
+        </div>
+        <div class="failure-card fade-in">
+          <div class="failure-icon">⚖️</div>
+          <h3 class="failure-title">Sentencing Enhancement</h3>
+          <p class="failure-text">Windley had prior felony convictions. This did not mean he committed this robbery — but it ensured that when the jury returned a guilty verdict, the consequence was severe: 20 years to life. New York's persistent felony offender laws meant a marginal case yielded a catastrophic sentence, and the same prior record made courts at every appellate level less receptive to his claims. His record was used to define him rather than examine the evidence.</p>
+        </div>
+        <div class="failure-card fade-in">
+          <div class="failure-icon">🔗</div>
+          <h3 class="failure-title">Circumstantial Evidence Mistaken for Proof</h3>
+          <p class="failure-text">The prosecution's case rested on a single chain of custody: a stolen money order traced to Windley's purchase. The connection was real. His guilt was not. Windley had provided his real name, ID, and home address at the appliance store — not the behavior of someone concealing criminal activity. The CRU ultimately concluded that the jury, had it known the identities and robbery records of the actual perpetrators, would likely have acquitted.</p>
+        </div>
+        <div class="failure-card fade-in">
+          <div class="failure-icon">🚫</div>
+          <h3 class="failure-title">Appellate System Failures</h3>
+          <p class="failure-text">Windley's direct appeal to the Second Department failed. Leave to the Court of Appeals was denied. Federal habeas was denied. Every available avenue of post-conviction review rejected him — because each was constrained by the record at trial, a record that didn't include the evidence that would later exonerate him. The courts could only see what the investigation had found. They could not see what it had missed.</p>
+        </div>
+        <div class="failure-card fade-in">
+          <div class="failure-icon">📅</div>
+          <h3 class="failure-title">No Path to Accountability</h3>
+          <p class="failure-text">The two men who actually robbed Gerald Ross cannot be prosecuted for that crime. The statute of limitations expired years ago. The victim died before the exoneration. There is no legal mechanism to hold the actual perpetrators responsible for the specific robbery that destroyed Windley's life — a structural gap in the justice system that compounds the injustice of every wrongful conviction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDALONE QUOTE -->
+  <div class="standalone-quote">
+    <blockquote>
+      "This case is really a cautionary tale of how things can seem one way but, without careful analysis, not be what it purports to be."
+    </blockquote>
+    <cite>— Brooklyn District Attorney Eric Gonzalez, March 17, 2026</cite>
+  </div>
+
+  <!-- CRU INVESTIGATION -->
+  <section class="cru-section section-full" id="cru">
+    <div class="section">
+      <div class="section-header fade-in">
+        <span class="section-num">03</span>
+        <h2 class="section-title">The Reinvestigation</h2>
+      </div>
+      <div class="cru-grid">
+        <div class="prose fade-in">
+          <p>After Shanies Law presented the case to the Kings County District Attorney's Conviction Review Unit, the CRU undertook a thorough reinvestigation that confirmed what Kenneth Windley had been saying since the day of his arrest: he bought a money order, not a robbery.</p>
+          <p>The CRU determined the true identities of both suspects — whose nicknames and partial names Windley had provided to prosecutors before his trial, and whose full identities were never pursued. Both men were by then serving prison sentences for a pattern of seven robberies committed in the same Brooklyn neighborhoods, between April 2005 and February 2006, targeting elderly men returning from banks and check-cashing offices. The modus operandi was identical to the Ross robbery in every detail.</p>
+          <p>The two men confirmed Windley's account in recorded prison phone calls, written statements, and direct CRU interviews. They stated unequivocally that they robbed Gerald Ross and sold the money order to Windley, who had no involvement in the crime. The CRU reviewed corroborating evidence — including the appliance store records showing Windley arrived with two other men, one of whom handled the transaction and explained the money order to the manager — and found the account fully consistent.</p>
+          <p>The CRU concluded that had this evidence been before the jury, there was a reasonable probability of acquittal. Because retrying the case 20 years later was not feasible — the victim having died and memories having faded — the indictment was dismissed entirely.</p>
+        </div>
+        <div class="fade-in">
+          <div class="evidence-box">
+            <div class="box-label">Key Evidence Supporting Exoneration</div>
+            <div class="evidence-item">
+              <span class="evidence-marker">1</span>
+              <p>Sworn statements from both actual perpetrators, confirming they robbed Gerald Ross and sold the money order to Windley</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-marker">2</span>
+              <p>Recorded prison phone calls and email correspondence corroborating the perpetrators' confessions</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-marker">3</span>
+              <p>Seven subsequent robbery convictions against the two men, all targeting elderly male victims leaving Brooklyn banks — same neighborhood, same method, beginning three days after the Ross robbery</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-marker">4</span>
+              <p>Appliance store records showing Windley arrived with two other men who participated in the transaction and explained the money order to the manager</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-marker">5</span>
+              <p>Windley's own consistent account — given to police before arrest, before trial, at trial, and throughout his 19 years of incarceration — confirmed in every material detail by the CRU investigation</p>
+            </div>
+            <div class="evidence-item">
+              <span class="evidence-marker">6</span>
+              <p>Windley's use of his real name, driver's license, and home address at the point of sale — consistent with someone who had no knowledge of wrongdoing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FIRM'S WORK -->
+  <section class="firm-section section-full" id="firm">
+    <div class="section">
+      <div class="section-header fade-in">
+        <span class="section-num">04</span>
+        <h2 class="section-title">The Work of Shanies Law</h2>
+      </div>
+      <div class="firm-two-col">
+        <div class="prose fade-in">
+          <p>Wrongful conviction cases are among the most demanding work in the law. By the time a client reaches us, the official machinery has already concluded they are guilty — often multiple times, across multiple courts. The record is closed. The witnesses have scattered or died. And the person at the center of it all has been living with the consequences for years, sometimes decades.</p>
+          <p>In Kenneth Windley's case, the core facts were never in real dispute: he bought a money order from two men he knew from the neighborhood, used it to buy his mother a stove, and gave his real name and address when he did it. He told investigators this before his arrest. He testified to it at trial. He continued to say so for nineteen years. The system simply didn't believe him — or didn't look hard enough to find out whether it should.</p>
+          <p>Our work on this case centered on what the system had left unfinished. Windley had identified the two actual perpetrators from the beginning. He had partial names, nicknames, and enough information for an investigator to find them — which he eventually did, with the help of his fiancée and private investigators working on their own time. By the time we brought the case to the Kings County Conviction Review Unit, the exculpatory evidence was overwhelming. Our task was to present it in a form the CRU could act on, and to advocate for the outcome the evidence demanded.</p>
+          <p>On March 17, 2026, Kenneth Windley walked out of a Brooklyn courthouse with his mother and his fiancée. He said he wasn't bitter. "I'm just going to move on from there." That grace, after nineteen years, is his alone. The obligation to fight for it — and for everyone still waiting — belongs to us.</p>
+        </div>
+        <div class="fade-in">
+          <div class="firm-bio-card">
+            <div class="attorney-name">David B. Shanies</div>
+            <div class="attorney-title">Principal &nbsp;·&nbsp; Shanies Law Office</div>
+            <p class="bio-text">David Shanies is a seasoned trial lawyer focused on wrongful convictions, civil rights, and the rights of the incarcerated. He represented Kenneth Windley through the CRU process and appeared in court on the day of exoneration.</p>
+            <p class="bio-text" style="margin-top: 1rem;">His wrongful conviction work includes the exonerations of Muhammad A. Aziz and Khalil Islam — the two men wrongfully convicted of killing Malcolm X — and the $36 million civil settlement that followed. He has written and lectured extensively on conviction integrity and wrongful conviction litigation.</p>
+            <div class="award-list">
+              <div class="award-item">Thurgood Marshall Award — Federal Bar Council</div>
+              <div class="award-item">Pro Bono Publico Award — Legal Aid Society</div>
+              <div class="award-item">Super Lawyer, Civil Rights — every year since 2019</div>
+              <div class="award-item">Lawdragon 500 Leading Civil Rights Lawyers, 2023</div>
+              <div class="award-item">New York Law Journal Rising Star, 2016</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section class="press-section section-full" id="press">
+    <div class="section">
+      <div class="section-header fade-in">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Press Coverage</h2>
+      </div>
+      <div class="press-grid">
+        <div class="press-card fade-in">
+          <div class="press-outlet">Associated Press</div>
+          <div class="press-headline">New York man freed after 19 years in prison for robbery he didn't commit</div>
+        </div>
+        <div class="press-card fade-in">
+          <div class="press-outlet">Brooklyn DA's Office</div>
+          <div class="press-headline">DA Gonzalez Moves to Vacate Conviction and Free Man Serving Time for Robbery After Two Others Confessed</div>
+        </div>
+        <div class="press-card fade-in">
+          <div class="press-outlet">Newsday</div>
+          <div class="press-headline">Brooklyn Man Exonerated After 19 Years — Conviction Review Unit Confirms Innocence</div>
+        </div>
+        <div class="press-card fade-in">
+          <div class="press-outlet">PIX11 / NBC / ABC News</div>
+          <div class="press-headline">Kenneth Windley, 61, freed after wrongful robbery conviction; DA apologizes outside courthouse</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-firm">Shanies Law Office LLC</div>
+      <div class="footer-tagline">Wrongful Convictions &nbsp;·&nbsp; Civil Rights &nbsp;·&nbsp; New York</div>
+      <div class="footer-contact">
+        <p>90 Broad Street, 23rd Floor<br>New York, New York 10004<br>shanieslaw.com</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="https://shanieslaw.com/about">About David Shanies</a>
+      <a href="https://shanieslaw.com/wrongful-convictions">Wrongful Convictions</a>
+      <a href="https://shanieslaw.com/news">News & Press</a>
+      <a href="https://shanieslaw.com/contact">Contact the Firm</a>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <p>Kenneth Windley &nbsp;·&nbsp; Exonerated March 17, 2026 &nbsp;·&nbsp; Brooklyn, New York</p>
+      <p>© 2026 David B. Shanies Law Office LLC</p>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection observer for fade-in and timeline animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in, .timeline-item').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Stagger timeline items
+    document.querySelectorAll('.timeline-item').forEach((item, i) => {
+      item.style.transitionDelay = `${i * 0.08}s`;
+    });
+
+    // Stagger failure cards
+    document.querySelectorAll('.failure-card').forEach((card, i) => {
+      card.style.transitionDelay = `${i * 0.07}s`;
+    });
+  </script>
+
+</body>
+</html>
